@@ -175,11 +175,11 @@ export default class DateRange extends Component {
               <Text style={markTitle}>{markText}</Text>
               <View style={styles.dateContainer}>
                 <Text style={headerDate}>
-                  {this.state.clearStart ? this.state.clearStart : "Start Date"}
+                  {this.state.clearStart ? this.state.clearStart : this.props.startDateText || "Start Date"}
                 </Text>
                 <Text style={styles.headTitleText} />
                 <Text style={headerDate}>
-                  {this.state.clearEnd ? this.state.clearEnd : "End Date"}
+                  {this.state.clearEnd ? this.state.clearEnd : this.props.endDateText || "End Date"}
                 </Text>
               </View>
             </View>
@@ -202,7 +202,7 @@ export default class DateRange extends Component {
               <Text
                 style={{ fontSize: 20, color: "black", fontWeight: "bold" }}
               >
-                {this.state.focusedMonth.format("MMMM YYYY")}
+                {this.state.focusedMonth.format(this.props.calendarTitleFormat || "MMMM YYYY")}
               </Text>
               <TouchableOpacity onPress={this.nextMonth}>
                 <Text
