@@ -93,7 +93,9 @@ export default class ComposePicker extends Component {
         });
       }
     } else {
-      alert('please select correct date');
+      if(this.props.errorAlertText) {
+        alert(this.props.errorAlertText);
+      }      
     }
   };
   getTitleElement() {
